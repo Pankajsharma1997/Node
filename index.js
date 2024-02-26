@@ -1,10 +1,13 @@
-// const chalk = require('chalk');
+const http = require('http');
+const data = require('./app'); // import data from the other data.js file 
+http.createServer((req,resp)=> {
+resp.writeHead(200,{'content-Type':'application\json'});
+resp.write(JSON.stringify(data));
+resp.end();
 
-// const log = console.log;
+}).listen(5000);
 
-// // Combine styled and normal strings
-// log(chalk.blue('Hello') + ' World' + chalk.red('!'));
-const app = require('colors')
-console.log("helo".green);
+
+
 
 
